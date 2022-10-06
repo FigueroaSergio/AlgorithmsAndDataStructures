@@ -66,5 +66,33 @@ public class Search {
         }
         return second;
     }
+
+    /**
+     * Indexes of arr that sum k
+     *
+     * @param arr ordered array with at least 2 elements
+     * @param k   integer
+     * @return array with of two numbers
+     */
+    public int[] indexesToSum(int[] arr, int k) {
+        if (arr.length < 2) {
+            return new int[]{-1, -1};
+        }
+        int i = 0, j = arr.length - 1;
+
+        while (i < j) {
+            int sum = arr[i] + arr[j];
+            if (sum == k) {
+                return new int[]{i, j};
+            }
+            if (sum < k) {
+                i++;
+            }
+            if (sum > k) {
+                j--;
+            }
+        }
+        return new int[]{-1, -1};
+    }
 }
 

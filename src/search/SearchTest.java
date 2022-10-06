@@ -59,4 +59,14 @@ class SearchTest {
     void secondMinimumWithNegative() {
         assertEquals(-6, search.SecondMinimum(new int[]{1, 6, -3, 4, -6, 7, 8, 4, 5, -12, 34, 13}));
     }
+
+    @Test
+    void indexesToSum() {
+        assertArrayEquals(new int[]{2, 6}, search.indexesToSum(new int[]{1, 2, 3, 4, 6, 7, 9, 13, 23}, 12));
+    }
+
+    @Test
+    void indexesToSumNonExist() {
+        assertArrayEquals(new int[]{-1, -1}, search.indexesToSum(new int[]{1, 2, 3, 4, 6, 7, 9, 13, 23}, 18));
+    }
 }
