@@ -31,5 +31,19 @@ public class Search {
         }
         return (n + 1) / 2;
     }
+
+    public int minimum(int[] arr) {
+
+        if (arr.length < 1) {
+            return 0;
+        }
+        int min = arr[0];
+        for (int i : arr) {
+            if (i < min) {
+                min = i;
+            }
+        }
+        return min;
+    }
 }
 
