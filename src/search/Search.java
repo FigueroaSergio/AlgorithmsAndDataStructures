@@ -45,5 +45,26 @@ public class Search {
         }
         return min;
     }
+
+    public int SecondMinimum(int[] arr) {
+        if (arr.length < 1) {
+            return Integer.MIN_VALUE;
+        }
+        if (arr.length < 2) {
+            return arr[0];
+        }
+
+        int i = 1, min = arr[0], second = arr[1];
+        while (i < arr.length) {
+            if (arr[i] < min) {
+                second = min;
+                min = arr[i];
+            } else if (arr[i] < second) {
+                second = arr[i];
+            }
+            i++;
+        }
+        return second;
+    }
 }
 

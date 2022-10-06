@@ -41,12 +41,22 @@ class SearchTest {
     }
 
     @Test
-    void minimunWithNegativeValues() {
+    void minimumWithNegativeValues() {
         assertEquals(-4, search.minimum(new int[]{1, 2, 3, 4, -1, 5, -4, 10}));
     }
 
     @Test
     void minimun() {
         assertEquals(1, search.minimum(new int[]{2, 2, 3, 1, 6, 5, 8, 10}));
+    }
+
+    @Test
+    void secondMinimum() {
+        assertEquals(4, search.SecondMinimum(new int[]{1, 6, 7, 8, 4, 5, 12, 34, 13}));
+    }
+
+    @Test
+    void secondMinimumWithNegative() {
+        assertEquals(-6, search.SecondMinimum(new int[]{1, 6, -3, 4, -6, 7, 8, 4, 5, -12, 34, 13}));
     }
 }
