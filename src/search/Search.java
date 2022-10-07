@@ -49,12 +49,9 @@ public class Search {
         return min;
     }
 
-    public int SecondMinimum(int[] arr) {
-        if (arr.length < 1) {
-            return Integer.MIN_VALUE;
-        }
+    public int[] SecondMinimum(int[] arr) {
         if (arr.length < 2) {
-            return arr[0];
+            return new int[]{};
         }
 
         int i = 1, min = arr[0], second = arr[1];
@@ -67,7 +64,7 @@ public class Search {
             }
             i++;
         }
-        return second;
+        return new int[]{min, second};
     }
 
     /**
@@ -79,7 +76,7 @@ public class Search {
      */
     public int[] indexesToSum(int[] arr, int k) {
         if (arr.length < 2) {
-            return new int[]{-1, -1};
+            return new int[]{};
         }
         int i = 0, j = arr.length - 1;
 
@@ -95,7 +92,7 @@ public class Search {
                 j--;
             }
         }
-        return new int[]{-1, -1};
+        return new int[]{};
     }
 
     public int winnerHalf(int[] arr) {

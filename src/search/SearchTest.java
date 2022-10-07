@@ -36,7 +36,7 @@ class SearchTest {
     }
 
     @Test
-    void minimunEmptyArray() {
+    void minimumEmptyArray() {
         assertEquals(0, search.minimum(new int[]{}));
     }
 
@@ -46,18 +46,18 @@ class SearchTest {
     }
 
     @Test
-    void minimun() {
+    void minimum() {
         assertEquals(1, search.minimum(new int[]{2, 2, 3, 1, 6, 5, 8, 10}));
     }
 
     @Test
     void secondMinimum() {
-        assertEquals(4, search.SecondMinimum(new int[]{1, 6, 7, 8, 4, 5, 12, 34, 13}));
+        assertArrayEquals(new int[]{1, 4}, search.SecondMinimum(new int[]{1, 6, 7, 8, 4, 5, 12, 34, 13}));
     }
 
     @Test
     void secondMinimumWithNegative() {
-        assertEquals(-6, search.SecondMinimum(new int[]{1, 6, -3, 4, -6, 7, 8, 4, 5, -12, 34, 13}));
+        assertArrayEquals(new int[]{-12, -6}, search.SecondMinimum(new int[]{1, 6, -3, 4, -6, 7, 8, 4, 5, -12, 34, 13}));
     }
 
     @Test
@@ -67,7 +67,7 @@ class SearchTest {
 
     @Test
     void indexesToSumNonExist() {
-        assertArrayEquals(new int[]{-1, -1}, search.indexesToSum(new int[]{1, 2, 3, 4, 6, 7, 9, 13, 23}, 18));
+        assertArrayEquals(new int[]{}, search.indexesToSum(new int[]{1, 2, 3, 4, 6, 7, 9, 13, 23}, 18));
     }
 
     @Test
