@@ -7,23 +7,23 @@ public class Search {
 
 
     public int binarySearch(int[] arr, int n) {
+        if (arr.length < 1) {
+            return -1;
+        }
         int start = 0, end = arr.length - 1;
-        int position = this.middled(end);
 
-        while (start != position) {
+
+        while (start < end) {
+            int position = start + this.middled(end - start);
             if (arr[position] == n)
                 return position;
             if (arr[position] < n) {
-                start = position;
-                position += middled(end - start);
+                start = position + 1;
             } else {
-                end = position;
-                position -= middled(end - start);
+                end = position - 1;
             }
 
         }
-        if (arr[position] == n)
-            return position;
         return -1;
 
     }
