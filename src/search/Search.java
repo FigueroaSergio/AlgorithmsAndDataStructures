@@ -1,5 +1,8 @@
 package search;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Search {
 
 
@@ -93,6 +96,24 @@ public class Search {
             }
         }
         return new int[]{-1, -1};
+    }
+
+    public int winnerHalf(int[] arr) {
+        int half = arr.length / 2;
+        Map<Integer, Integer> memory = new HashMap<>();
+        for (int val : arr) {
+            int count = 0;
+            if (memory.containsKey(val)) {
+                count = memory.get(val);
+            }
+            count++;
+
+            if (count > half) {
+                return val;
+            }
+            memory.put(val, count);
+        }
+        return 0;
     }
 }
 

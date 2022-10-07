@@ -69,4 +69,9 @@ class SearchTest {
     void indexesToSumNonExist() {
         assertArrayEquals(new int[]{-1, -1}, search.indexesToSum(new int[]{1, 2, 3, 4, 6, 7, 9, 13, 23}, 18));
     }
+
+    @Test
+    void winnerHalf() {
+        assertEquals(5, search.winnerHalf(new int[]{5, 3, 5, 1, 5, 7, 2, 5, 6, 5, 4, 5, 5, 5, 7}));
+    }
 }
