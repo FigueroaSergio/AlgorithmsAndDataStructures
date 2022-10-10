@@ -112,5 +112,23 @@ public class Search {
         }
         return 0;
     }
+
+    /**
+     * Precondition: exist a value that appears more than n/2
+     */
+    public int[] boyerMoore(int[] arr) {
+        if (arr.length < 1) {
+            return new int[]{};
+        }
+        int majority = 0, count = 0;
+        for (int val : arr) {
+            if (count == 0) {
+                majority = val;
+            }
+            count += (val == majority) ? 1 : -1;
+        }
+
+        return count > 0 ? new int[]{majority} : new int[]{};
+    }
 }
 
