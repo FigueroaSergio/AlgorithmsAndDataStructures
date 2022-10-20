@@ -74,4 +74,18 @@ class SearchTest {
     void winnerHalf() {
         assertEquals(5, search.winnerHalf(new int[]{5, 3, 5, 1, 5, 7, 2, 5, 6, 5, 4, 5, 5, 5, 7}));
     }
+
+    @Test
+    void copyPaste() {
+        int[] n = {1, 2, 3, 4, 5, 6, 7, 8};
+        search.copyPasteMat(n, 1);
+        assertArrayEquals(new int[]{3, 4, 5, 6, 7, 8, 1, 2}, n);
+    }
+
+    @Test
+    void copyPasteEven() {
+        int[] n = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+        search.copyPasteMat(n, 3);
+        assertArrayEquals(new int[]{5, 6, 7, 8, 9, 1, 2, 3, 4}, n);
+    }
 }

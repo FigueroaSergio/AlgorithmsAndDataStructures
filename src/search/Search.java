@@ -130,5 +130,36 @@ public class Search {
 
         return count > 0 ? new int[]{majority} : new int[]{};
     }
+
+    // Don't work
+    // TODO:
+    // Divide in two cases when MCM != 1
+    public void copyPasteMat(int[] arr, int i) {
+        int lung = arr.length - 1;
+        if (i >= lung) {
+            return;
+        }
+        int count = 0;
+        int prev, next;
+        int aux = 0;
+        prev = arr[i + 1];
+        while (count <= i + 1) {
+            if (aux < 0) {
+                aux = count;
+            }
+            next = arr[aux];
+            arr[aux] = prev;
+            prev = next;
+            if (count == aux) {
+                aux = lung - i + count;
+                count++;
+            } else {
+                aux = aux - i - 1;
+            }
+
+        }
+
+
+    }
 }
 
